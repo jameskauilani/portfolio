@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>james hobbs</title>
+<meta name="description" content="Marketing built on insurance-trained rigor, aimed at brand storytelling. Case studies, resume, and contact.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%232F4858'/%3E%3Ctext x='32' y='44' font-family='Arial' font-size='36' font-weight='700' fill='%23F3ECE0' text-anchor='middle'%3Ej%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sand:#C9A876;
+    --sand-tint:#EDE2CE;
+    --ink:#2F4858;
+    --rust:#C1502E;
+    --bone:#F3ECE0;
+    --max:720px;
+    --gutter:24px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bone);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--ink);}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--rust); outline-offset:3px;}
+
+  .display{font-family:'Archivo',sans-serif; font-weight:900; letter-spacing:-0.02em;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 var(--gutter);}
+
+  /* ---- nav ---- */
+  nav{
+    position:sticky; top:0; z-index:10;
+    background:rgba(243,236,224,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(47,72,88,0.12);
+  }
+  nav .wrap{display:flex; align-items:center; justify-content:space-between; padding-top:16px; padding-bottom:16px;}
+  nav .mark{font-family:'Archivo',sans-serif; font-weight:700; font-size:18px; text-decoration:none; color:var(--ink);}
+  nav ul{list-style:none; display:flex; gap:22px; margin:0; padding:0;}
+  nav a{text-decoration:none; font-size:14px; color:var(--ink); opacity:0.75;}
+  nav a:hover{opacity:1;}
+  @media (max-width:520px){
+    nav ul{gap:14px;}
+    nav a{font-size:13px;}
+  }
+
+  section{padding:88px 0;}
+  section + section{border-top:1px solid rgba(47,72,88,0.10);}
+
+  /* ---- hero ---- */
+  .hero{padding-top:72px;}
+  .hero h1{
+    font-size:clamp(48px,11vw,96px);
+    line-height:0.92;
+    margin:0 0 20px;
+  }
+  .hero .tagline{
+    font-family:'Archivo',sans-serif; font-weight:700;
+    font-size:clamp(20px,3.6vw,28px);
+    color:var(--rust);
+    margin:0 0 28px;
+  }
+  .hero p.statement{
+    max-width:46ch;
+    font-size:19px;
+    margin:0;
+  }
+  .hero{opacity:0; transform:translateY(14px); animation:rise 0.7s ease forwards 0.1s;}
+  @media (prefers-reduced-motion:reduce){ .hero{opacity:1; transform:none; animation:none;} }
+  @keyframes rise{ to{opacity:1; transform:translateY(0);} }
+
+  /* ---- section headings ---- */
+  h2.section-title{
+    font-size:clamp(30px,5vw,40px);
+    margin:0 0 36px;
+  }
+
+  /* ---- about ---- */
+  .about-grid{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.3fr); gap:48px; align-items:start;}
+  @media (max-width:640px){ .about-grid{grid-template-columns:1fr;} }
+  .photo-slot{
+    width:100%;
+    aspect-ratio:4/5;
+    background:
+      repeating-linear-gradient(135deg, var(--sand-tint), var(--sand-tint) 10px, var(--sand) 10px, var(--sand) 11px);
+    border:1px solid rgba(47,72,88,0.18);
+    display:flex; align-items:center; justify-content:center;
+    text-align:center; padding:20px;
+    font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--ink); opacity:0.7;
+  }
+  img.photo-slot{display:block; object-fit:cover; padding:0;}
+  .placeholder-note{
+    border:1px dashed rgba(193,80,46,0.5);
+    background:rgba(193,80,46,0.05);
+    padding:16px 18px;
+    font-size:14px;
+    color:var(--ink);
+    margin-top:28px;
+  }
+  .placeholder-note strong{color:var(--rust);}
+
+  .name-signature{
+    font-family:'Archivo',sans-serif; font-weight:700;
+    font-size:15px; opacity:0.6; margin-top:40px;
+  }
+
+  /* ---- work / case studies ---- */
+  .case{border-bottom:1px solid rgba(47,72,88,0.14);}
+  .case:first-child{border-top:1px solid rgba(47,72,88,0.14);}
+  .case-toggle{
+    width:100%; text-align:left; background:none; border:none; cursor:pointer;
+    padding:28px 0; display:flex; justify-content:space-between; align-items:flex-start; gap:20px;
+    color:var(--ink);
+  }
+  .case-toggle .cs-title{font-family:'Archivo',sans-serif; font-weight:700; font-size:21px; margin:0 0 8px;}
+  .case-toggle .cs-teaser{font-size:15px; opacity:0.8; margin:0; max-width:52ch;}
+  .case-toggle .plus{
+    font-family:'IBM Plex Mono',monospace; font-size:22px; flex-shrink:0;
+    transition:transform 0.25s ease;
+  }
+  .case[data-open="true"] .plus{transform:rotate(45deg);}
+  .case-body{
+    max-height:0; overflow:hidden; transition:max-height 0.3s ease;
+  }
+  .case-body-inner{padding:4px 0 32px;}
+  .case-part{margin-bottom:18px;}
+  .case-part .label{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--rust);
+    margin:0 0 6px;
+  }
+  .case-part p{margin:0; max-width:62ch;}
+  .stat{font-family:'IBM Plex Mono',monospace; font-weight:600; color:var(--rust);}
+
+  /* ---- resume ---- */
+  .skills{display:grid; gap:22px;}
+  .skill-group .k{font-family:'Archivo',sans-serif; font-weight:700; font-size:15px; margin:0 0 4px;}
+  .skill-group .v{margin:0; max-width:62ch; opacity:0.85;}
+  .resume-cta{
+    display:inline-block; margin-top:28px;
+    padding:12px 22px;
+    background:var(--ink); color:var(--bone);
+    font-family:'Archivo',sans-serif; font-weight:700; font-size:14px;
+    text-decoration:none; border-radius:999px;
+  }
+  .resume-cta:hover{background:var(--rust);}
+
+  /* ---- connect ---- */
+  .connect-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:460px;}
+  @media (max-width:480px){ .connect-grid{grid-template-columns:1fr;} }
+  .connect-item .k{font-family:'IBM Plex Mono',monospace; font-size:12px; opacity:0.6; margin:0 0 4px;}
+  .connect-item .v{margin:0; font-size:16px;}
+  .connect-item a{text-decoration:underline; text-decoration-color:var(--rust);}
+
+  footer{padding:40px 0 60px; font-size:13px; opacity:0.6;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="mark" href="#top">james hobbs</a>
+    <ul>
+      <li><a href="#about">about</a></li>
+      <li><a href="#work">work</a></li>
+      <li><a href="#resume">resume</a></li>
+      <li><a href="#connect">connect</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header id="top" class="hero wrap">
+  <h1 class="display">james hobbs</h1>
+  <p class="tagline">Curious first. Confident after.</p>
+  <p class="statement">I built my marketing foundation in insurance, an industry that rewards precision over flash. Now I'm taking that same rigor wherever a brand has a story worth telling.</p>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <h2 class="section-title display">about</h2>
+    <div class="about-grid">
+      <img class="photo-slot" src="assets/james-hobbs.jpg" alt="Portrait of James Hobbs">
+      <div>
+        <p>I learned marketing fundamentals in a highly regulated industry: insurance. My work spans LinkedIn content strategy, SEO, AEO, and weekly reporting across submissions, campaigns, and content performance, the fundamentals that make strategy actually work. Insurance doesn't hand you creative freedom, you have to find it, and that search sharpened everything I do now.</p>
+        <p>I taught myself video production with a phone and a rigged podium, and I pitched a company president on a tool I found on LinkedIn. I thrive in the uncomfortable, because that's where I've grown the most. I'm not chasing one industry. I'm chasing the kind of work where a brand's story actually needs telling, and I want to find out how far that rigor travels.</p>
+        <p>Last month Urban Outfitters flew almost 200 community members out to AutoCamp Joshua Tree for the first season of Meet Me@UO, and I was one of them. Three days of desert hikes, brand partner workshops, and a surprise set from Rebecca Black. What stuck with me wasn't the lineup, it was the strategy behind it. Brand trips usually go to influencers with huge followings. UO bet on the opposite: people who already loved the brand and just needed a platform. That's a harder call to make and a smarter one, and watching it work from the inside is part of why I want to build brand experiences like it.</p>
+        <p class="name-signature">james kauilani hobbs</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <h2 class="section-title display">selected work</h2>
+
+    <div class="case" data-open="false">
+      <button class="case-toggle" aria-expanded="false">
+        <span>
+          <p class="cs-title">Video Content Production</p>
+          <p class="cs-teaser">A shelved video series, a pivot to real footage, and a 2.7&times; jump in engagement.</p>
+        </span>
+        <span class="plus">+</span>
+      </button>
+      <div class="case-body">
+        <div class="case-body-inner">
+          <div class="case-part">
+            <p class="label">01 &middot; problem</p>
+            <p>Gateway's first scripted video series, a "meet the team" introduction to the company's product directors, was fully produced and then shelved. Leadership only realized, after seeing the finished product, that there was no clear strategy behind it.</p>
+          </div>
+          <div class="case-part">
+            <p class="label">02 &middot; solution</p>
+            <p>Rather than abandon video, the team pivoted to a lower-risk approach: repurposing existing webinar recordings into short, publishable clips. I assisted with production and polish, using Descript to clean up the audio, select the most engaging footage, and apply consistent branding so each clip was ready to publish.</p>
+          </div>
+          <div class="case-part">
+            <p class="label">03 &middot; outcome</p>
+            <p>The pivot worked. The earliest clips used an audio/waveform format and averaged <span class="stat">6.1%</span> engagement. Once the team shifted to using actual video footage, engagement rose to <span class="stat">9.4%</span>. Comparing this against Gateway's employee culture videos (<span class="stat">16.4%</span> average) revealed a sharper pattern: content built around real people and candid moments consistently outperforms purely informational content, a finding now shaping the plan for Gateway's October webinar clips.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case" data-open="false">
+      <button class="case-toggle" aria-expanded="false">
+        <span>
+          <p class="cs-title">Social Media &amp; Brand Strategy</p>
+          <p class="cs-teaser">A 31% LinkedIn following lift, and a content insight now reshaping everything published.</p>
+        </span>
+        <span class="plus">+</span>
+      </button>
+      <div class="case-body">
+        <div class="case-body-inner">
+          <div class="case-part">
+            <p class="label">01 &middot; problem</p>
+            <p>Gateway had minimal digital visibility beyond a basic company presence, and buyer research was shifting toward AI platforms (ChatGPT, Gemini, Perplexity) rather than traditional search, a shift most of the industry, including Gateway, hadn't caught up to.</p>
+          </div>
+          <div class="case-part">
+            <p class="label">02 &middot; solution</p>
+            <p>After connecting a trend I noticed on LinkedIn to a shift already visible in Gateway's own submission data, I researched HubSpot's AEO product, built the business case, and paired it with a second initiative: launching Gateway's first Instagram presence. I took direct ownership of LinkedIn content strategy, documented a repeatable process, and ran real tests comparing posting days and content types to improve performance. The same forward-looking instinct led me to research TikTok as a future channel, which I pitched directly to Gateway's VP.</p>
+          </div>
+          <div class="case-part">
+            <p class="label">03 &middot; outcome</p>
+            <p>LinkedIn followers grew from 2,261 to 2,965, a <span class="stat">31%</span> increase, under my direct ownership (prior growth was nearly flat). A/B testing showed Saturday posts earn <span class="stat">81%</span> higher engagement than weekday posts, and that posts featuring real employees ("Community Spotlight") earn <span class="stat">432%</span> higher engagement than standard product content, insights now built into the ongoing content strategy. Instagram launched October 1. The TikTok research was well received by leadership and is being brought to Gateway's president for consideration, still in idea phase.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case" data-open="false">
+      <button class="case-toggle" aria-expanded="false">
+        <span>
+          <p class="cs-title">Marketing Workflow Efficiency</p>
+          <p class="cs-teaser">From multi-page PDF postcards to one clean page clients actually use.</p>
+        </span>
+        <span class="plus">+</span>
+      </button>
+      <div class="case-body">
+        <div class="case-body-inner">
+          <div class="case-part">
+            <p class="label">01 &middot; problem</p>
+            <p>Clients requesting an insurance quote had to work through multi-page PDF postcards, materials that were clunky to read and act on quickly.</p>
+          </div>
+          <div class="case-part">
+            <p class="label">02 &middot; solution</p>
+            <p>I taught myself GitHub specifically to solve this, then used Claude AI to build a single-page HTML document that consolidated the multi-page PDF content into one clean, easy-to-act-on page for client distribution.</p>
+          </div>
+          <div class="case-part">
+            <p class="label">03 &middot; outcome</p>
+            <p>The tool was deployed and is <span class="stat">in active use</span> with clients. Feedback has been overwhelmingly positive, with both the internal team and clients responding well to how much simpler the new format made requesting a quote.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="resume">
+  <div class="wrap">
+    <h2 class="section-title display">resume + skills</h2>
+    <div class="skills">
+      <div class="skill-group">
+        <p class="k">Strategy &amp; Research</p>
+        <p class="v">SEO, AEO/GEO, competitive and industry research, campaign reporting</p>
+      </div>
+      <div class="skill-group">
+        <p class="k">Paid &amp; Organic Growth</p>
+        <p class="v">Google &amp; Bing Ads, negative keyword optimization, LinkedIn content strategy, Instagram activation</p>
+      </div>
+      <div class="skill-group">
+        <p class="k">Production</p>
+        <p class="v">Video editing (Descript), on-camera direction, content calendars</p>
+      </div>
+      <div class="skill-group">
+        <p class="k">Technical</p>
+        <p class="v">GitHub, HTML, AI-assisted development (Claude)</p>
+      </div>
+    </div>
+    <a class="resume-cta" href="assets/James-Hobbs-Resume.pdf" download>Download resume</a>
+  </div>
+</section>
+
+<section id="connect">
+  <div class="wrap">
+    <h2 class="section-title display">connect</h2>
+    <div class="connect-grid">
+      <div class="connect-item">
+        <p class="k">email</p>
+        <p class="v"><a href="mailto:jameskauilani@gmail.com">jameskauilani@gmail.com</a></p>
+      </div>
+      <div class="connect-item">
+        <p class="k">linkedin</p>
+        <p class="v"><a href="https://www.linkedin.com/in/james-hobbs-marketing" target="_blank" rel="noopener">/in/james-hobbs-marketing</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  james kauilani hobbs &middot; &copy; 2026
+</footer>
+
+<script>
+  document.querySelectorAll('.case-toggle').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var caseEl = btn.closest('.case');
+      var body = caseEl.querySelector('.case-body');
+      var isOpen = caseEl.getAttribute('data-open') === 'true';
+      if (isOpen){
+        body.style.maxHeight = null;
+        caseEl.setAttribute('data-open','false');
+        btn.setAttribute('aria-expanded','false');
+      } else {
+        body.style.maxHeight = body.scrollHeight + 'px';
+        caseEl.setAttribute('data-open','true');
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
