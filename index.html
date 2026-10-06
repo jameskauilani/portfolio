@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>james hobbs</title>
-<meta name="description" content="Marketing built on insurance-trained rigor, aimed at brand storytelling. Case studies, resume, and contact.">
+<meta name="description" content="Marketing student and marketer by way of Gateway Specialty Insurance and USLI. How I work, case studies, resume, and contact.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%232F4858'/%3E%3Ctext x='32' y='44' font-family='Arial' font-size='36' font-weight='700' fill='%23F3ECE0' text-anchor='middle'%3Ej%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,9 +50,10 @@
   nav ul{list-style:none; display:flex; gap:22px; margin:0; padding:0;}
   nav a{text-decoration:none; font-size:14px; color:var(--ink); opacity:0.75;}
   nav a:hover{opacity:1;}
-  @media (max-width:520px){
-    nav ul{gap:14px;}
-    nav a{font-size:13px;}
+  @media (max-width:560px){
+    nav ul{gap:12px;}
+    nav a{font-size:12px;}
+    nav .mark{font-size:16px;}
   }
 
   section{padding:88px 0;}
@@ -100,28 +101,40 @@
     font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--ink); opacity:0.7;
   }
   img.photo-slot{display:block; object-fit:cover; padding:0;}
-  .placeholder-note{
-    border:1px dashed rgba(193,80,46,0.5);
-    background:rgba(193,80,46,0.05);
-    padding:16px 18px;
-    font-size:14px;
-    color:var(--ink);
-    margin-top:28px;
-  }
-  .placeholder-note strong{color:var(--rust);}
+  .about-grid p{margin:0 0 18px;}
 
   .name-signature{
     font-family:'Archivo',sans-serif; font-weight:700;
     font-size:15px; opacity:0.6; margin-top:40px;
   }
 
+  /* ---- how i work ---- */
+  .how-intro{max-width:52ch; margin:-12px 0 32px; opacity:0.85;}
+  .how-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px;}
+  @media (max-width:600px){ .how-grid{grid-template-columns:1fr;} }
+  .how-card{
+    background:var(--sand-tint);
+    border:1px solid rgba(47,72,88,0.14);
+    padding:24px 22px 26px;
+  }
+  .how-card .big{
+    font-family:'Archivo',sans-serif; font-weight:900; letter-spacing:-0.02em;
+    font-size:clamp(40px,8vw,52px); line-height:1; color:var(--rust); margin:0 0 4px;
+  }
+  .how-card .big-cap{
+    font-family:'IBM Plex Mono',monospace; font-size:11px; opacity:0.7; margin:0 0 16px;
+  }
+  .how-card h3{font-family:'Archivo',sans-serif; font-weight:700; font-size:19px; margin:0 0 6px;}
+  .how-card .skills-line{font-family:'IBM Plex Mono',monospace; font-size:12px; margin:0 0 10px; opacity:0.85;}
+  .how-card p.proof{margin:0; font-size:15px;}
+
   /* ---- work / case studies ---- */
   .case{border-bottom:1px solid rgba(47,72,88,0.14);}
-  .case:first-child{border-top:1px solid rgba(47,72,88,0.14);}
+  .case:first-of-type{border-top:1px solid rgba(47,72,88,0.14);}
   .case-toggle{
     width:100%; text-align:left; background:none; border:none; cursor:pointer;
     padding:28px 0; display:flex; justify-content:space-between; align-items:flex-start; gap:20px;
-    color:var(--ink);
+    color:var(--ink); font:inherit;
   }
   .case-toggle .cs-title{font-family:'Archivo',sans-serif; font-weight:700; font-size:21px; margin:0 0 8px;}
   .case-toggle .cs-teaser{font-size:15px; opacity:0.8; margin:0; max-width:52ch;}
@@ -134,6 +147,11 @@
     max-height:0; overflow:hidden; transition:max-height 0.3s ease;
   }
   .case-body-inner{padding:4px 0 32px;}
+  .case-role{
+    font-family:'IBM Plex Mono',monospace; font-size:13px; margin:0 0 22px;
+    padding:10px 14px; background:var(--sand-tint); border-left:3px solid var(--rust);
+  }
+  .case-role strong{color:var(--rust); font-weight:600;}
   .case-part{margin-bottom:18px;}
   .case-part .label{
     font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--rust);
@@ -142,18 +160,35 @@
   .case-part p{margin:0; max-width:62ch;}
   .stat{font-family:'IBM Plex Mono',monospace; font-weight:600; color:var(--rust);}
 
+  /* bar ladder (case study 1) */
+  .ladder{margin:20px 0 4px; max-width:62ch;}
+  .ladder-row{display:grid; grid-template-columns:minmax(0,150px) minmax(0,1fr) 52px; gap:12px; align-items:center; margin-bottom:10px; font-size:13px;}
+  .ladder-row .name{font-family:'IBM Plex Mono',monospace; font-size:12px;}
+  .ladder-row .track{background:rgba(47,72,88,0.08); height:16px;}
+  .ladder-row .bar{height:100%;}
+  .ladder-row .val{font-family:'IBM Plex Mono',monospace; font-weight:600; text-align:right;}
+  @media (max-width:480px){
+    .ladder-row{grid-template-columns:minmax(0,1fr) 48px; row-gap:4px;}
+    .ladder-row .name{grid-column:1 / -1;}
+  }
+
+  /* big numerals (case study 2) */
+  .numerals{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin:20px 0 4px; max-width:62ch;}
+  @media (max-width:520px){ .numerals{grid-template-columns:1fr;} }
+  .numerals .n{font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(36px,7vw,46px); line-height:1; color:var(--rust); margin:0;}
+  .numerals .c{font-size:13px; margin:4px 0 0; opacity:0.85;}
+
+
   /* ---- resume ---- */
-  .skills{display:grid; gap:22px;}
-  .skill-group .k{font-family:'Archivo',sans-serif; font-weight:700; font-size:15px; margin:0 0 4px;}
-  .skill-group .v{margin:0; max-width:62ch; opacity:0.85;}
   .resume-cta{
-    display:inline-block; margin-top:28px;
+    display:inline-block; margin-top:4px;
     padding:12px 22px;
     background:var(--ink); color:var(--bone);
     font-family:'Archivo',sans-serif; font-weight:700; font-size:14px;
     text-decoration:none; border-radius:999px;
   }
   .resume-cta:hover{background:var(--rust);}
+  .resume-note{max-width:52ch; margin:-12px 0 24px; opacity:0.85;}
 
   /* ---- connect ---- */
   .connect-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:460px;}
@@ -172,6 +207,7 @@
     <a class="mark" href="#top">james hobbs</a>
     <ul>
       <li><a href="#about">about</a></li>
+      <li><a href="#how">how i work</a></li>
       <li><a href="#work">work</a></li>
       <li><a href="#resume">resume</a></li>
       <li><a href="#connect">connect</a></li>
@@ -182,7 +218,7 @@
 <header id="top" class="hero wrap">
   <h1 class="display">james hobbs</h1>
   <p class="tagline">Curious first. Confident after.</p>
-  <p class="statement">I built my marketing foundation in insurance, an industry that rewards precision over flash. Now I'm taking that same rigor wherever a brand has a story worth telling.</p>
+  <p class="statement">I built my marketing foundation in insurance. Now I'm bringing that rigor to brands where self-expression is at the core of the stories I tell.</p>
 </header>
 
 <section id="about">
@@ -191,11 +227,53 @@
     <div class="about-grid">
       <img class="photo-slot" src="assets/james-hobbs.jpg" alt="Portrait of James Hobbs">
       <div>
-        <p>I learned marketing fundamentals in a highly regulated industry: insurance. My work spans LinkedIn content strategy, SEO, AEO, and weekly reporting across submissions, campaigns, and content performance, the fundamentals that make strategy actually work. Insurance doesn't hand you creative freedom, you have to find it, and that search sharpened everything I do now.</p>
-        <p>I taught myself video production with a phone and a rigged podium, and I pitched a company president on a tool I found on LinkedIn. I thrive in the uncomfortable, because that's where I've grown the most. I'm not chasing one industry. I'm chasing the kind of work where a brand's story actually needs telling, and I want to find out how far that rigor travels.</p>
-        <p>Last month Urban Outfitters flew almost 200 community members out to AutoCamp Joshua Tree for the first season of Meet Me@UO, and I was one of them. Three days of desert hikes, brand partner workshops, and a surprise set from Rebecca Black. What stuck with me wasn't the lineup, it was the strategy behind it. Brand trips usually go to influencers with huge followings. UO bet on the opposite: people who already loved the brand and just needed a platform. That's a harder call to make and a smarter one, and watching it work from the inside is part of why I want to build brand experiences like it.</p>
+        <p>Greetings! I'm James Hobbs, a marketing student at Widener University and a marketer by way of Gateway Specialty Insurance and USLI.</p>
+        <p>I built my marketing foundation in insurance. I started in customer service, preparing quotes for agents, and six months later became the first student at Gateway Specialty fully dedicated to marketing. Nobody handed me that path. I said yes to every opportunity, learned from all the resources I had access to, and let the work make the case. I taught myself video with a phone and a rigged podium, pitched a company president on a tool I found on LinkedIn, and watched Gateway Specialty adopt all of it.</p>
+        <p>Outside of school and work, I'm obsessed with doing it all in style and on beat. A good outfit and the right tunes keep me grounded, curious, and, above all, confident.</p>
         <p class="name-signature">james kauilani hobbs</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2 class="section-title display">how i work</h2>
+    <p class="how-intro">Four habits that show up in every project, with the proof behind each.</p>
+    <div class="how-grid">
+
+      <div class="how-card">
+        <p class="big">31%</p>
+        <p class="big-cap">LinkedIn follower growth</p>
+        <h3>Build content people respond to</h3>
+        <p class="skills-line">content strategy &middot; copywriting &middot; short-form video</p>
+        <p class="proof">I own LinkedIn content strategy, and followers grew 31%. When we switched to real video footage, engagement rose from 6.1% to 9.4%.</p>
+      </div>
+
+      <div class="how-card">
+        <p class="big">432%</p>
+        <p class="big-cap">more engagement on employee posts</p>
+        <h3>Find what works</h3>
+        <p class="skills-line">A/B testing &middot; market research &middot; competitive analysis</p>
+        <p class="proof">Testing showed Saturday posts earn 81% higher engagement than weekday posts, and posts featuring real employees earn 432% more than standard product content.</p>
+      </div>
+
+      <div class="how-card">
+        <p class="big">250+</p>
+        <p class="big-cap">ad campaigns optimized</p>
+        <h3>Get found</h3>
+        <p class="skills-line">SEO &amp; AEO &middot; Google Ads &amp; Microsoft Advertising &middot; HubSpot AEO</p>
+        <p class="proof">I proposed HubSpot AEO, and Gateway Specialty adopted it. I optimize Google and Bing Ads across 250+ campaigns to lower cost per click and cut wasted spend.</p>
+      </div>
+
+      <div class="how-card">
+        <p class="big">1 page</p>
+        <p class="big-cap">replaced a multi-page PDF</p>
+        <h3>Make it and ship it</h3>
+        <p class="skills-line">graphic design in Canva and Copilot &middot; video editing in CapCut and Descript &middot; HTML &middot; GitHub &middot; Claude</p>
+        <p class="proof">I came up with a single-page quote tool and built it, and every client we send it to now uses it.</p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -208,23 +286,29 @@
       <button class="case-toggle" aria-expanded="false">
         <span>
           <p class="cs-title">Video Content Production</p>
-          <p class="cs-teaser">A shelved video series, a pivot to real footage, and a 2.7&times; jump in engagement.</p>
+          <p class="cs-teaser">A shelved video series, a pivot to real footage, and a 54% lift in engagement.</p>
         </span>
         <span class="plus">+</span>
       </button>
       <div class="case-body">
         <div class="case-body-inner">
+          <p class="case-role"><strong>my role</strong> &middot; Chose the clips and edited them.</p>
           <div class="case-part">
             <p class="label">01 &middot; problem</p>
-            <p>Gateway's first scripted video series, a "meet the team" introduction to the company's product directors, was fully produced and then shelved. Leadership only realized, after seeing the finished product, that there was no clear strategy behind it.</p>
+            <p>Gateway Specialty's first scripted video series, a "meet the team" introduction to the company's product directors, was fully produced and then shelved. Leadership only realized, after seeing the finished product, that there was no clear strategy behind it.</p>
           </div>
           <div class="case-part">
             <p class="label">02 &middot; solution</p>
-            <p>Rather than abandon video, the team pivoted to a lower-risk approach: repurposing existing webinar recordings into short, publishable clips. I assisted with production and polish, using Descript to clean up the audio, select the most engaging footage, and apply consistent branding so each clip was ready to publish.</p>
+            <p>Rather than abandon video, the team pivoted to a lower-risk approach: repurposing existing webinar recordings into short, publishable clips. I chose which moments to clip and edited each one in Descript, cleaning up the audio and applying consistent branding so it was ready to publish.</p>
           </div>
           <div class="case-part">
             <p class="label">03 &middot; outcome</p>
-            <p>The pivot worked. The earliest clips used an audio/waveform format and averaged <span class="stat">6.1%</span> engagement. Once the team shifted to using actual video footage, engagement rose to <span class="stat">9.4%</span>. Comparing this against Gateway's employee culture videos (<span class="stat">16.4%</span> average) revealed a sharper pattern: content built around real people and candid moments consistently outperforms purely informational content, a finding now shaping the plan for Gateway's October webinar clips.</p>
+            <p>The pivot worked. The earliest clips used an audio/waveform format and averaged <span class="stat">6.1%</span> engagement. Once we shifted to actual video footage, engagement rose to <span class="stat">9.4%</span>. Comparing this against Gateway Specialty's employee culture videos (<span class="stat">16.4%</span> average) revealed a sharper pattern: content built around real people and candid moments consistently outperforms purely informational content, and it is now shaping our plan for future video content.</p>
+            <div class="ladder" role="img" aria-label="Average engagement: audio waveform clips 6.1 percent, real video footage 9.4 percent, employee culture videos 16.4 percent">
+              <div class="ladder-row"><span class="name">audio waveform clips</span><span class="track"><span class="bar" style="display:block; width:37%; background:var(--sand);"></span></span><span class="val">6.1%</span></div>
+              <div class="ladder-row"><span class="name">real video footage</span><span class="track"><span class="bar" style="display:block; width:57%; background:var(--rust);"></span></span><span class="val">9.4%</span></div>
+              <div class="ladder-row"><span class="name">employee culture videos</span><span class="track"><span class="bar" style="display:block; width:100%; background:var(--ink);"></span></span><span class="val">16.4%</span></div>
+            </div>
           </div>
         </div>
       </div>
@@ -240,17 +324,23 @@
       </button>
       <div class="case-body">
         <div class="case-body-inner">
+          <p class="case-role"><strong>my role</strong> &middot; Researched and proposed HubSpot AEO and the Instagram launch; own LinkedIn content strategy.</p>
           <div class="case-part">
             <p class="label">01 &middot; problem</p>
-            <p>Gateway had minimal digital visibility beyond a basic company presence, and buyer research was shifting toward AI platforms (ChatGPT, Gemini, Perplexity) rather than traditional search, a shift most of the industry, including Gateway, hadn't caught up to.</p>
+            <p>Gateway Specialty had minimal digital visibility beyond a basic company presence, and buyer research was shifting toward AI platforms (ChatGPT, Gemini, Perplexity) rather than traditional search, a shift most of the industry, including Gateway Specialty, hadn't caught up to.</p>
           </div>
           <div class="case-part">
             <p class="label">02 &middot; solution</p>
-            <p>After connecting a trend I noticed on LinkedIn to a shift already visible in Gateway's own submission data, I researched HubSpot's AEO product, built the business case, and paired it with a second initiative: launching Gateway's first Instagram presence. I took direct ownership of LinkedIn content strategy, documented a repeatable process, and ran real tests comparing posting days and content types to improve performance. The same forward-looking instinct led me to research TikTok as a future channel, which I pitched directly to Gateway's VP.</p>
+            <p>I connected a trend I noticed on LinkedIn to a shift already visible in Gateway Specialty's own submission data, researched HubSpot's AEO product, and built the business case. I paired it with a second initiative, launching Gateway Specialty's first Instagram presence. Separately, I took ownership of LinkedIn content strategy, documented a process for the team to reference, and ran A/B tests on posting days and content types.</p>
           </div>
           <div class="case-part">
             <p class="label">03 &middot; outcome</p>
-            <p>LinkedIn followers grew from 2,261 to 2,965, a <span class="stat">31%</span> increase, under my direct ownership (prior growth was nearly flat). A/B testing showed Saturday posts earn <span class="stat">81%</span> higher engagement than weekday posts, and that posts featuring real employees ("Community Spotlight") earn <span class="stat">432%</span> higher engagement than standard product content, insights now built into the ongoing content strategy. Instagram launched October 1. The TikTok research was well received by leadership and is being brought to Gateway's president for consideration, still in idea phase.</p>
+            <p>Gateway Specialty purchased HubSpot AEO following my proposal. The team now uses it to track AI visibility, prompts, citations, and competitive share of voice, and those insights shaped our LinkedIn strategy and the Instagram launch on October 1. On LinkedIn, followers grew from 2,261 to 2,965, a <span class="stat">31%</span> increase under my ownership, after a slower growth rate before. Testing showed Saturday posts earn <span class="stat">81%</span> higher engagement than weekday posts, and posts featuring real employees earn <span class="stat">432%</span> more than standard product content. I also researched TikTok as a future channel and pitched it to our VP. It's still in the idea phase.</p>
+            <div class="numerals">
+              <div><p class="n">31%</p><p class="c">LinkedIn follower growth, 2,261 to 2,965</p></div>
+              <div><p class="n">81%</p><p class="c">higher engagement on Saturday posts</p></div>
+              <div><p class="n">432%</p><p class="c">higher engagement on employee posts</p></div>
+            </div>
           </div>
         </div>
       </div>
@@ -260,23 +350,24 @@
       <button class="case-toggle" aria-expanded="false">
         <span>
           <p class="cs-title">Marketing Workflow Efficiency</p>
-          <p class="cs-teaser">From multi-page PDF postcards to one clean page clients actually use.</p>
+          <p class="cs-teaser">From multi-page PDF postcards to one clean page every client now uses.</p>
         </span>
         <span class="plus">+</span>
       </button>
       <div class="case-body">
         <div class="case-body-inner">
+          <p class="case-role"><strong>my role</strong> &middot; Came up with the idea and built it.</p>
           <div class="case-part">
             <p class="label">01 &middot; problem</p>
             <p>Clients requesting an insurance quote had to work through multi-page PDF postcards, materials that were clunky to read and act on quickly.</p>
           </div>
           <div class="case-part">
             <p class="label">02 &middot; solution</p>
-            <p>I taught myself GitHub specifically to solve this, then used Claude AI to build a single-page HTML document that consolidated the multi-page PDF content into one clean, easy-to-act-on page for client distribution.</p>
+            <p>I came up with the idea of consolidating the multi-page PDF content into a single-page HTML document that clients could act on in one place. I taught myself GitHub to build it and used Claude to write the page, then readied it for client distribution.</p>
           </div>
           <div class="case-part">
             <p class="label">03 &middot; outcome</p>
-            <p>The tool was deployed and is <span class="stat">in active use</span> with clients. Feedback has been overwhelmingly positive, with both the internal team and clients responding well to how much simpler the new format made requesting a quote.</p>
+            <p>Every client we send it to now uses it. Clients and the internal team have both responded well to how much simpler requesting a quote has become.</p>
           </div>
         </div>
       </div>
@@ -287,25 +378,8 @@
 
 <section id="resume">
   <div class="wrap">
-    <h2 class="section-title display">resume + skills</h2>
-    <div class="skills">
-      <div class="skill-group">
-        <p class="k">Strategy &amp; Research</p>
-        <p class="v">SEO, AEO/GEO, competitive and industry research, campaign reporting</p>
-      </div>
-      <div class="skill-group">
-        <p class="k">Paid &amp; Organic Growth</p>
-        <p class="v">Google &amp; Bing Ads, negative keyword optimization, LinkedIn content strategy, Instagram activation</p>
-      </div>
-      <div class="skill-group">
-        <p class="k">Production</p>
-        <p class="v">Video editing (Descript), on-camera direction, content calendars</p>
-      </div>
-      <div class="skill-group">
-        <p class="k">Technical</p>
-        <p class="v">GitHub, HTML, AI-assisted development (Claude)</p>
-      </div>
-    </div>
+    <h2 class="section-title display">resume</h2>
+    <p class="resume-note">The full picture of where I've worked and what I've done, on one page.</p>
     <a class="resume-cta" href="assets/James-Hobbs-Resume.pdf" download>Download resume</a>
   </div>
 </section>
