@@ -11,9 +11,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 
-<!-- Google Analytics 4: replace G-XXXXXXXXXX with your Measurement ID. Nothing loads until you do. -->
+<!-- Google Analytics 4: GA4 Measurement ID is set below. -->
 <script>
-  var GA_ID = 'G-XXXXXXXXXX';
+  var GA_ID = 'G-8VS7117ZY4';
   window.dataLayer = window.dataLayer || [];
   function gtag(){ dataLayer.push(arguments); }
   if (GA_ID.indexOf('XXXX') === -1) {
@@ -80,7 +80,10 @@
   .section-sub{font-size:18px; max-width:52ch; margin:0 0 40px;}
 
   /* ---- hero ---- */
-  .hero{padding:72px 0 88px;}
+  .hero{padding:0 0 88px;}
+  .hero-art{height:clamp(120px,17vw,230px); overflow:hidden; border-bottom:0;}
+  .hero-art svg{display:block; width:100%; height:100%;}
+  .hero .hero-body{padding-top:96px;}
   .hero h1{margin:0; line-height:0.9;}
   .hero h1 .small{display:block; font-family:'Archivo',sans-serif; font-weight:700; font-size:clamp(30px,6vw,56px); letter-spacing:-0.01em;}
   .hero h1 .big{display:block; font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(54px,20vw,186px); letter-spacing:-0.035em; color:var(--sand); margin:4px 0 6px;}
@@ -204,7 +207,8 @@
 
 <main>
 <header id="top" class="hero on-dark">
-  <div class="wrap">
+  
+  <div class="wrap hero-body">
     <h1 class="reveal" aria-label="James Kauilani Hobbs">
       <span class="small" aria-hidden="true">james</span>
       <span class="big" aria-hidden="true">kauilani</span>
